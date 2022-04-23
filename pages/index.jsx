@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function Home({ arrayPokemon2 }) {
   console.log('arrayPokemon', arrayPokemon2);
   return (
-    <>
+    <Layout title="Pokemon">
       <section className="py-10 px-10">
         <div className="container m-auto gap-10 grid sm:grid-cols-2 md:grid-cols-4">
           {arrayPokemon2.map((pokemon, index) => (
@@ -35,7 +36,7 @@ export default function Home({ arrayPokemon2 }) {
           ))}
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 
