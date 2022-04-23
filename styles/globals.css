@@ -25,4 +25,27 @@ a {
 .fire {
   background-color: #E95C4D;
 }
+
+.poison {
+  background-color: #611380;
+}
+
+.water {
+  background-color: #43CCFF;
+}
+
+.type-grass {
+  background: #00CA91;
+  opacity: 0.70;
+}
+
+.type-poison {
+  background: #611380;
+  opacity: 0.70;
+}
+
+.type-water {
+  background-color: #43CCFF;
+  opacity: 0.70;
+}
 /*# sourceMappingURL=globals.css.map */

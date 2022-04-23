@@ -6,8 +6,8 @@ export default function Home({ arrayPokemon2 }) {
   console.log('arrayPokemon', arrayPokemon2);
   return (
     <>
-      <section className="py-10">
-        <div className="container m-auto gap-10 grid grid-cols-4">
+      <section className="py-10 px-10">
+        <div className="container m-auto gap-10 grid sm:grid-cols-2 md:grid-cols-4">
           {arrayPokemon2.map((pokemon, index) => (
             <Link
               href={{
@@ -16,8 +16,10 @@ export default function Home({ arrayPokemon2 }) {
               key={pokemon.id}
               passHref
             >
-              <a className="px-5 border-2 flex flex-col place-content-between">
-                <div className="border-2 flex max-h-56">
+              <a
+                className={`px-5 py-10 border-2 flex flex-col place-content-between ${pokemon.types[0].type.name}`}
+              >
+                <div className="border-2 flex max-h-56 bg-zinc-200 bg-opacity-50">
                   <img
                     src={pokemon.img}
                     alt={pokemon.name}
@@ -27,7 +29,6 @@ export default function Home({ arrayPokemon2 }) {
                 {pokemon.types.map((tipos, i) => (
                   <div key={i}>{tipos.type.name}</div>
                 ))}
-                {console.log(pokemon.types)}
                 {pokemon.name}
               </a>
             </Link>
