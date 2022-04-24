@@ -7,10 +7,15 @@ function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} - Pokemon</title>
+        <link
+          rel="shortcut icon"
+          href="/img/icone/ico.png"
+          type="image/x-icon"
+        />
       </Head>
       <Header></Header>
-      <main>{children}</main>
+      <main className="bg-[#E0D7EC]">{children}</main>
       <Footer></Footer>
     </>
   );
