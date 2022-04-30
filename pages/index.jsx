@@ -6,17 +6,18 @@ import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
 
 import Layout from '../components/Layout';
 
-const people = [
-  { name: 'Wade Cooper' },
-  { name: 'Arlene Mccoy' },
-  { name: 'Devon Webb' },
-  { name: 'Tom Cook' },
-  { name: 'Tanya Fox' },
-  { name: 'Hellen Schmidt' },
+const tipo = [
+  { name: 'Selecione um tipo' },
+  { name: 'Fire' },
+  { name: 'Grass' },
+  { name: 'Poison' },
+  { name: 'Flying' },
+  { name: 'Water' },
+  { name: 'Bug' },
 ];
 
 export default function Home({ arrayPokemon2 }) {
-  const [selected, setSelected] = useState(people[0]);
+  const [selected, setSelected] = useState(tipo[0]);
 
   console.log('arrayPokemon', arrayPokemon2);
   return (
@@ -24,7 +25,11 @@ export default function Home({ arrayPokemon2 }) {
       <section className="px-10">
         <div className="max-w-5xl bg-[#D4C3A3] m-auto ">
           <div className="border-b-2 py-9 px-14">
-            <Listbox value={selected} onChange={setSelected}>
+            <Listbox
+              value={selected}
+              onChange={setSelected}
+              className="max-w-sm"
+            >
               <div className="relative mt-1">
                 <Listbox.Button className="focus:outline-none relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
                   <span className="block truncate">{selected.name}</span>
@@ -41,18 +46,18 @@ export default function Home({ arrayPokemon2 }) {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="focus:outline-none absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 sm:text-sm">
-                    {people.map((person, personIdx) => (
+                  <Listbox.Options className="max-w-sm focus:outline-none absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 sm:text-sm z-20">
+                    {tipo.map((types, typeIdx) => (
                       <Listbox.Option
-                        key={personIdx}
+                        key={typeIdx}
                         className={({ active }) =>
-                          `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                          `relative cursor-default select-none py-2 pl-10 pr-4 z-20 ${
                             active
                               ? 'bg-amber-100 text-amber-900'
                               : 'text-gray-900'
                           }`
                         }
-                        value={person}
+                        value={types}
                       >
                         {({ selected }) => (
                           <>
@@ -61,7 +66,7 @@ export default function Home({ arrayPokemon2 }) {
                                 selected ? 'font-medium' : 'font-normal'
                               }`}
                             >
-                              {person.name}
+                              {types.name}
                             </span>
                             {selected ? (
                               <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
