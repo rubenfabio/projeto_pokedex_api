@@ -32,7 +32,7 @@ export default function Home({ arrayPokemon2, tipos }) {
     <Layout title="Pokedex">
       <section className="sm:px-10">
         <div className="max-w-5xl bg-[#D4C3A3] m-auto ">
-          <div className="border-b-2 px-4 py-9 sm:px-14 flex place-content-center">
+          <div className="border-b-2 px-4 py-9 sm:px-14 flex place-content-center sm:place-content-start">
             <Listbox
               value={selected}
               onChange={setSelected}
