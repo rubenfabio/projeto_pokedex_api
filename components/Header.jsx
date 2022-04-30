@@ -3,11 +3,11 @@ import React from 'react';
 function Header() {
   return (
     <header className="bg-[#524153] py-2 px-5 md:px-10">
-      <div className="flex place-content-between place-items-center">
+      <div className="flex sm:flex-row flex-col gap-2 place-content-between place-items-center">
         <div className="">
           <img src="/img/logo/International_Pokemon_logo.png" alt="" />
         </div>
-        <div className="w-8/12">
+        <div className="w-full sm:w-8/12">
           <input
             className="flex w-full py-2 px-5 outline-none rounded-md"
             type="search"

@@ -30,13 +30,13 @@ export default function Home({ arrayPokemon2, tipos }) {
 
   return (
     <Layout title="Pokedex">
-      <section className="px-10">
+      <section className="sm:px-10">
         <div className="max-w-5xl bg-[#D4C3A3] m-auto ">
-          <div className="border-b-2 py-9 px-14">
+          <div className="border-b-2 px-4 py-9 sm:px-14 flex place-content-center">
             <Listbox
               value={selected}
               onChange={setSelected}
-              className="max-w-sm"
+              className="max-w-[280px] sm:max-w-sm w-full"
             >
               <div className="relative mt-1">
                 <Listbox.Button className="focus:outline-none relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
@@ -54,7 +54,7 @@ export default function Home({ arrayPokemon2, tipos }) {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="max-w-sm focus:outline-none absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 sm:text-sm z-20">
+                  <Listbox.Options className="max-w-[280px] sm:max-w-sm focus:outline-none absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 sm:text-sm z-20">
                     {tipos.results.map((types, typeIdx) => (
                       <Listbox.Option
                         key={typeIdx}
@@ -94,7 +94,7 @@ export default function Home({ arrayPokemon2, tipos }) {
               </div>
             </Listbox>
           </div>
-          <div className="px-32 py-20 grid grid-cols-3 gap-[55px]">
+          <div className="md:px-32 py-20 grid sm:grid-cols-2  lg:grid-cols-3 gap-[55px] place-content-center">
             {pokemons.map((pokemon, index) => (
               <Link
                 href={{
